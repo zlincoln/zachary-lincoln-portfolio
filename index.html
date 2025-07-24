@@ -38,7 +38,7 @@
     }
 
     nav a {
-      margin-left: 1.5rem;
+      margin: 0 1rem 0.5rem 0;
       text-decoration: none;
       color: #0073b1;
       font-weight: 500;
@@ -82,7 +82,7 @@
       font-size: 1.5rem;
     }
 
-    .cta button {
+    .cta button, .nav-cta {
       background-color: #0073b1;
       color: white;
       border: none;
@@ -130,7 +130,7 @@
         align-items: flex-start;
       }
 
-      .cta button {
+      .cta button, .nav-cta {
         margin-top: 1rem;
         width: 100%;
       }
@@ -192,6 +192,53 @@
         0%, 100% { transform: rotateZ(0deg) skewY(0deg); }
         50% { transform: rotateZ(0.2deg) skewY(1deg); }
     }
+
+    /* Modal Styles */
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 2000; 
+      left: 0;
+      top: 0;
+      width: 100%; 
+      height: 100%; 
+      overflow: auto; 
+      background-color: rgba(0,0,0,0.6);
+    }
+
+    .modal-content {
+      background-color: #fefefe;
+      margin: 10% auto; 
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 700px;
+      position: relative;
+      border-radius: 8px;
+    }
+
+    .modal-content iframe {
+        border: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    .close-button {
+      color: #aaa;
+      position: absolute;
+      top: 10px;
+      right: 25px;
+      font-size: 35px;
+      font-weight: bold;
+      line-height: 1;
+    }
+
+    .close-button:hover,
+    .close-button:focus {
+      color: black;
+      text-decoration: none;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -199,8 +246,9 @@
 <header>
     <h1>Zachary Lincoln</h1>
     <nav>
-        <a href="https://www.linkedin.com/in/zacharylincoln" target="_blank">LinkedIn</a>
-        <a href="/resume.pdf" download>Download Resume</a>
+        <a href="https://linkedin.com/in/zlincoln" target="_blank">Connect on LinkedIn</a>
+        <a href="/resume.pdf" target="_blank">View Resume</a>
+        <button class="nav-cta">Contact Me</button>
     </nav>
 </header>
 
@@ -212,7 +260,7 @@
         <div class="flag-wrapper"><div class="flag-inner"></div></div>
     </div>
     <div class="hero-content">
-      <h2>Product Manager |  Execution-Driven | UX & Analytics Fluent</h2>
+      <h2>Product Manager | Execution-Driven | UX & Analytics Fluent</h2>
       <p>
         I’m a product manager who knows how to ship. My background spans UX, development, and Agile delivery, 
         but my core strength is figuring out what needs to get built and getting it across the finish line.
@@ -232,8 +280,8 @@
   </section>
 
   <section class="cta">
-    <h2>Let’s work together</h2>
-    <button>Contact Me</button>
+    <h2>Need a PM who ships? Let’s make it happen.</h2>
+    <button>Work With Me</button>
   </section>
 
   <section class="case-studies container">
@@ -246,7 +294,7 @@
         payments, reducing market risk, and improving UX. Led cross-functional delivery and launched on time, 
         improving conversion and simplifying ops.
       </p>
-      <a href="/mnt/data/case-study-feature-definition.pdf" target="_blank">Read Case Study →</a>
+      <a href="case-study-feature-definition.pdf" target="_blank">Read Case Study →</a>
     </div>
 
     <div class="case-study">
@@ -256,16 +304,46 @@
         Enabled actionable insights, marketing automation, and a data-informed roadmap for product and 
         conversion strategy at GBI.
       </p>
-      <a href="/mnt/data/case-study-product-analytics.pdf" target="_blank">Read Case Study →</a>
+      <a href="case-study-product-analytics.pdf" target="_blank">Read Case Study →</a>
     </div>
   </section>
 
   <section class="cta">
-    <h2>Get in touch</h2>
-    <button>Contact Me</button>
+    <h2>Want to Turn Product Metrics Into Growth?</h2>
+    <button>Let’s Make an Impact</button>
   </section>
 
 </main>
+
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <script src="https://js.hsforms.net/forms/embed/48283293.js" defer></script>
+<div class="hs-form-frame" data-region="na1" data-form-id="462b0b63-fdab-4f25-8e45-2da5be3c085c" data-portal-id="48283293"></div>
+  </div>
+</div>
+
+<script>
+  const modal = document.getElementById("contactModal");
+  const contactButtons = document.querySelectorAll(".cta button, .nav-cta");
+  const closeButton = document.querySelector(".close-button");
+
+  contactButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      modal.style.display = "block";
+    });
+  });
+
+  closeButton.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  window.addEventListener("click", (event) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
+</script>
 
 </body>
 </html>
