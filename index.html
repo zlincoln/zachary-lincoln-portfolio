@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zachary Lincoln – Product Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caladea:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Caladea', serif;
+      background-color: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid #eee;
+      background-color: #fafafa;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #0073b1;
+      font-weight: 500;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .hero {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      align-items: flex-start;
+      position: relative;
+    }
+
+    .hero img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      background-color: #ccc;
+      flex-shrink: 0;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .cta {
+      background-color: #f0f4f8;
+      padding: 2rem;
+      margin: 3rem 0;
+      text-align: center;
+    }
+
+    .cta h2 {
+      margin: 0 0 1rem 0;
+      font-size: 1.5rem;
+    }
+
+    .cta button {
+      background-color: #0073b1;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      cursor: pointer;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
+    .case-studies {
+      margin-top: 2rem;
+    }
+
+    .case-study {
+      margin-bottom: 2.5rem;
+    }
+
+    .case-study h3 {
+      margin: 0 0 0.5rem;
+      font-size: 1.25rem;
+    }
+
+    .case-study p {
+      margin: 0 0 0.5rem;
+    }
+
+    .case-study a {
+      color: #0073b1;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    main > section:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+      }
+
+      .cta {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .cta button {
+        margin-top: 1rem;
+        width: 100%;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 1rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 0 1rem 0.5rem 0;
+      }
+    }
+
+    .profile-wrapper {
+        position: relative;
+    }
+
+    .profile-wrapper img {
+        z-index: 1;
+        position: relative;
+    }
+
+    .flag-wrapper {
+        display: none;
+        width: 120px;
+        height: 300px;
+        background: #401202; /* Outer color */
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+        position: absolute; 
+        top: 40px;
+        right: 50%;
+        transform: translateX(50%);
+        z-index: 0;
+    }
+
+    .flag-inner {
+        position: absolute;
+        top: 0px;     /* Uniform inset for top border */
+        left: 10px;
+        right: 10px;
+        bottom: 14px;  /* Inset to make bottom border appear even */
+        background: #A65132; /* Inner color */
+        clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 87%,         /* Slightly higher than 85% */
+            50% 100%,         /* Same point for tip */
+            0 87%             /* Symmetric adjustment */
+        );
+    }
+
+    @keyframes wave {
+        0%, 100% { transform: rotateZ(0deg) skewY(0deg); }
+        50% { transform: rotateZ(0.2deg) skewY(1deg); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+    <h1>Zachary Lincoln</h1>
+    <nav>
+        <a href="https://www.linkedin.com/in/zacharylincoln" target="_blank">LinkedIn</a>
+        <a href="/resume.pdf" download>Download Resume</a>
+    </nav>
+</header>
+
+<main>
+
+  <section class="hero container">
+    <div class="profile-wrapper">
+        <img src="zach.jpg" alt="Zachary Lincoln Portrait Placeholder" />
+        <div class="flag-wrapper"><div class="flag-inner"></div></div>
+    </div>
+    <div class="hero-content">
+      <h2>Product Manager |  Execution-Driven | UX & Analytics Fluent</h2>
+      <p>
+        I’m a product manager who knows how to ship. My background spans UX, development, and Agile delivery, 
+        but my core strength is figuring out what needs to get built and getting it across the finish line.
+      </p>
+      <p>
+        At <a href="https://gbi.co" target="_blank">GBI</a>, I led critical product efforts that helped modernize our retail trading platform. I introduced 
+        locked pricing, unlocked credit card support, and built out analytics pipelines that finally gave the 
+        business real visibility into conversion behavior. I worked closely with engineering, operations, 
+        marketing, and legal to get it done.
+      </p>
+      <p>
+        I’m hands-on, clear-headed under pressure, and always looking for ways to make a product faster, simpler, and smarter.
+      </p>
+    </div>
+
+      
+  </section>
+
+  <section class="cta">
+    <h2>Let’s work together</h2>
+    <button>Contact Me</button>
+  </section>
+
+  <section class="case-studies container">
+    <h2>Case Studies</h2>
+
+    <div class="case-study">
+      <h3>Locked Price Orders & Credit Card Support</h3>
+      <p>
+        Transitioned GBI’s retail trading platform from indicative to locked pricing — enabling credit card 
+        payments, reducing market risk, and improving UX. Led cross-functional delivery and launched on time, 
+        improving conversion and simplifying ops.
+      </p>
+      <a href="/mnt/data/case-study-feature-definition.pdf" target="_blank">Read Case Study →</a>
+    </div>
+
+    <div class="case-study">
+      <h3>Funnel Analytics & Event Tracking Framework</h3>
+      <p>
+        Designed and implemented granular event tracking across registration, funding, and ordering funnels. 
+        Enabled actionable insights, marketing automation, and a data-informed roadmap for product and 
+        conversion strategy at GBI.
+      </p>
+      <a href="/mnt/data/case-study-product-analytics.pdf" target="_blank">Read Case Study →</a>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h2>Get in touch</h2>
+    <button>Contact Me</button>
+  </section>
+
+</main>
+
+</body>
+</html>
